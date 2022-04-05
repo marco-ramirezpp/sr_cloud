@@ -1,0 +1,97 @@
+{% extends "base_template.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+<link href="../static/sytles/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="../static/sytles/signin.css" rel="stylesheet">
+<main class="form-signin">
+  <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+    <img class="mb-4" src="../static/sytles/supervoices.png" alt="">
+        <br>
+        <br>
+      <label for="form-control">Usuario</label>
+        {{ form.usuario(class_="form-control form-control-sm") }}
+      <label for="form-control">Contraseña</label>
+        {{ form.password(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Confirmar Contraseña</label>
+        {{ form.password2(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Radiohead</label>
+        {{ form.radiohead(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista coldplay</label>
+        {{ form.coldplay(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista The Beatles</label>
+        {{ form.beatles(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Muse</label>
+        {{ form.muse(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista D Cab</label>
+        {{ form.dcab(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Smith Elliot</label>
+        {{ form.smith(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Placebo</label>
+        {{ form.placebo(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Nails</label>
+        {{ form.nails(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Pink Floyd</label>
+        {{ form.pink(class_="form-control form-control-sm", size=32) }}
+      <label for="form-control">Califica este artista Depeche Mode</label>
+        {{ form.mode(class_="form-control form-control-sm", size=32) }}
+      {{ form.submit(class_="w-100 btn btn-lg btn-primary") }}
+
+   <div>¿ya tienes cuenta? <a href="{{ url_for('login') }}">Iniciar Sesión</a></div>
+    <p class="mt-5 mb-3 text-muted" align="center">&copy; Equipo 9 2022</p>
+
+  {% for message in get_flashed_messages() %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+    }
+
+    .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+}
+
+    .closebtn:hover {
+        color: black;
+}
+    </style>
+
+<div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <strong>Error</strong> {{ message }}</div>
+    {% endfor %}
+
+
+  </form>
+</main>
+{% endblock %}
